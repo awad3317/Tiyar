@@ -1,5 +1,5 @@
 
-        <section id="info" class=" py-5  rounded-2" style="background-color: #1d0948">
+        <section id="info" class="py-5" style="background-color: #0A2440">
     <div class="container">
         <div class="row align-items-center flex-column-reverse flex-md-row">
             <!-- الصورة -->
@@ -15,9 +15,9 @@
 
             <!-- النص -->
             <div class="col-md-6 pe-md-4">
-                <h1 class="display-4 fw-bold mb-4" style="color: #ff0049" data-aos="fade-left">عن رتم</h1>
+                <h1 class="display-4 fw-bold mb-4" style="color: #3E92CC" data-aos="fade-left">عن تيار</h1>
                 <p class="lead text-white-50" data-aos="fade-up">
-                    رتم فريق تقني يسعى لتقديم الحلول التقنية الذكية للجهات الحكومية والخاصة والأفراد من خلال تطوير المواقع والتطبيقات وبناء المشاريع البرمجية بتجربة استخدام عملية و واجهات فريدة.
+                    تيار شركة تقنيه تسعى لتقديم الحلول التقنية الذكية للجهات الحكومية والخاصة والأفراد من خلال تطوير المواقع والتطبيقات وبناء المشاريع البرمجية بتجربة استخدام عملية و واجهات فريدة.
                 </p>
             </div>
         </div>

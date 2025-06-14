@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm py-1" style="min-height: 60px;">
+<nav class="navbar navbar-expand-lg  fixed-top shadow-sm py-1" style="min-height: 60px;background-color: #0A2444">
     <div class="container-fluid px-4">
         <!-- الشعار -->
         <a class="navbar-brand py-0" href="#home">
-            <img src="{{ asset('images/Retme.png') }}" alt="Retme logo" width="120" height="90">
+            <img src="{{ asset('images/Tiyar.png') }}" alt="Tiyar logo" width="120" height="120">
         </a>
 
         <!-- زر القائمة المختصرة -->
@@ -10,13 +10,17 @@
             <span class="navbar-toggler-icon" style="width: 1em; height: 1em;"></span>
         </button>
             <style>
+                .nav-item  a{
+                    color: #ffffff;
+                }
                 .nav-item  a:hover {
-                    color: #ff0049;
+                    color: #ED8936;
                 }
                 .nav-link.active {
-                   color: #ff0049 !important;
+                   color: #ED8936 !important;
                     font-weight: bold;
                         }
+
                 </style>
         <!-- محتوى القائمة -->
         <div class="collapse navbar-collapse" id="navbarContent">
@@ -25,7 +29,7 @@
                     <a class="nav-link active py-1  px-3 fw-bold fs-5" href="#home">الرئيسية</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link py-1 px-3 fw-bold fs-5" href="#info">من نحن</a>
+                    <a class="nav-link py-1 px-3 fw-bold  fs-5" href="#info">من نحن</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link py-1 px-3 fw-bold fs-5" href="#how">كيف نعمل</a>

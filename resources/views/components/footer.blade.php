@@ -1,9 +1,9 @@
-<footer style="background-color: #1d0948">
+<footer style="background-color: #0A2463">
     <div class="container py-5 d-flex flex-column justify-content-center align-items-center">
         <!-- الصورة الرئيسية -->
         <img
-            src="{{ asset('images/logo_footer.png') }}"
-            alt="Retme logo for footer"
+            src="{{ asset('images/Tiyar.png') }}"
+            alt="Tiyar logo for footer"
             width="190"
             height="150"
             loading="lazy"
@@ -23,7 +23,7 @@
                         height="16"
                         class="ms-2"
                     >
-                    <span style="color: white" class="small">retme.info@gmail.com</span>
+                    <span style="color: #F7FAFC" class="small">Tiyar.info@gmail.com</span>
                 </div>
             </a>
 
@@ -37,7 +37,7 @@
                         height="16"
                         class="ms-2"
                     >
-                    <span style="color: white" class="small">لينكد ان</span>
+                    <span style="color: #F7FAFC" class="small">لينكد ان</span>
                 </div>
             </a>
             <!-- تويتر (X) -->
@@ -50,7 +50,7 @@
                         height="16"
                         class="ms-2"
                     >
-                    <span style="color: white" class="small">اكس</span>
+                    <span style="color: #F7FAFC" class="small">اكس</span>
                 </div>
             </a>
             <!-- إنستجرام -->
@@ -69,8 +69,8 @@
         </div>
 
         <!-- حقوق النشر -->
-        <p style="color: white" class="fs-20px small">
-            جميع الحقوق محفوظة لرتم- 2025 © Retem
+        <p style="color: #F7FAFC" class="fs-20px small">
+            جميع الحقوق محفوظة لتيار- 2025 © Tiyar
         </p>
     </div>
 </footer>
