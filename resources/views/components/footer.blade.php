@@ -1,4 +1,4 @@
-<footer style="background-color: #0A2444">
+<footer style="background-color: #571170">
     <div class="container py-5 d-flex flex-column justify-content-center align-items-center">
         <!-- الصورة الرئيسية -->
         <img
@@ -23,7 +23,7 @@
                         height="16"
                         class="ms-2"
                     >
-                    <span style="color: #F7FAFC" class="small">Tiyar.info@gmail.com</span>
+                    <span style="color: #FFFFFF" class="small">Tiyar.info@gmail.com</span>
                 </div>
             </a>
 
@@ -37,7 +37,7 @@
                         height="16"
                         class="ms-2"
                     >
-                    <span style="color: #F7FAFC" class="small">لينكد ان</span>
+                    <span style="color: #FFFFFF" class="small">لينكد ان</span>
                 </div>
             </a>
             <!-- تويتر (X) -->
@@ -50,7 +50,7 @@
                         height="16"
                         class="ms-2"
                     >
-                    <span style="color: #F7FAFC" class="small">اكس</span>
+                    <span style="color: #FFFFFF" class="small">اكس</span>
                 </div>
             </a>
             <!-- إنستجرام -->
@@ -69,7 +69,7 @@
         </div>
 
         <!-- حقوق النشر -->
-        <p style="color: #F7FAFC" class="fs-20px small">
+        <p style="color: #FFFFFF" class="fs-20px small">
             جميع الحقوق محفوظة لتيار- 2025 © Tiyar
         </p>
     </div>

@@ -2,7 +2,7 @@
     <div class="container-fluid px-4">
         <!-- الشعار -->
         <a class="navbar-brand py-0" href="#home">
-            <img src="{{ asset('images/Tiyar.png') }}" alt="Tiyar logo" width="120" height="120">
+            <img src="{{ asset('images/Tiyar.svg') }}" alt="Tiyar logo" width="100" height="100">
         </a>
 
         <!-- زر القائمة المختصرة -->
@@ -14,10 +14,10 @@
                     color: #ffffff;
                 }
                 .nav-item  a:hover {
-                    color: #ED8936;
+                    color: #571170;
                 }
                 .nav-link.active {
-                   color: #ED8936 !important;
+                   color: #571170 !important;
                     font-weight: bold;
                         }
 
@@ -48,7 +48,7 @@
                 <button type="button" class="btn btn-light btn-sm py-1 px-2 mt-auto service-btn text-white" style="background-color: #1d0948" data-bs-toggle="modal" data-bs-target="#projectModal">
                     <div class="d-flex align-items-center">
                         <img src="{{ asset('images/Vector.svg') }}" alt="ابدأ مشروعك" width="20" height="15" class="ms-1">
-                        <span style="font-size: 1rem;color:  #ED8936">ابدأ مشروعك</span>
+                        <span style="font-size: 1rem;color:  #f3f4f6">ابدأ مشروعك</span>
                     </div>
                 </button>
             </div>

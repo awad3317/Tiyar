@@ -1,9 +1,9 @@
-<section id="how" class="py-5" style="background-color: #EAF4FB;" >
+<section id="how" class="py-5" style="background-color: #F4F4F4;" >
     <div class="container">
-        <h1 class="display-4 fw-bold mb-5" style="color: #0A2463" data-aos="fade-left">كيف نعمل</h1>
+        <h1 class="display-4 fw-bold mb-5" style="color: #E91E63" data-aos="fade-left">كيف نعمل</h1>
 <style>
     .h3{
-        color: #0A2463;
+        color: #E91E63;
     }
     .display-1{
         color: #3E92CC;
@@ -224,17 +224,17 @@
     </div>
 </section>
 
-@push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-            easing: 'ease-out-quad',
-            duration: 600,
-        });
-    });
-</script>
-@endpush
+{{--@push('scripts')--}}
+{{--<script>--}}
+{{--    document.addEventListener('DOMContentLoaded', function() {--}}
+{{--        AOS.init({--}}
+{{--            easing: 'ease-out-quad',--}}
+{{--            duration: 600,--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
+{{--@endpush--}}
 
-@push('styles')
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-@endpush
+{{--@push('styles')--}}
+{{--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">--}}
+{{--@endpush--}}

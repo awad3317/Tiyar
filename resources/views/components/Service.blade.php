@@ -1,6 +1,6 @@
-<section id="service" class="py-5" style="background-color: #EAF4FB">
+<section id="service" class="py-5" style="background-color: #F4F4F4">
     <div class="container py-4">
-        <h1 class="display-4 fw-bold mb-5" style="color: #571170" data-aos="fade-left">خدماتنا</h1>
+        <h1 class="display-4 fw-bold mb-5" style="color: #E91E63" data-aos="fade-left">خدماتنا</h1>
 <style>
     .h6{
         color:#571170;
@@ -20,7 +20,7 @@
                                     <a href="{{ $service->id }}" type="button" class="btn btn-primary btn-sm py-1 px-2 mt-auto service-btn" style="border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#projectModal">
                                         <div class="d-flex align-items-center">
                                             <img src="{{ asset('images/Vector.svg') }}" alt="ابدأ مشروعك" width="16" height="12" class="ms-1">
-                                            <span style="font-size: 0.85rem; color: #ED8936">ابدأ مشروعك</span>
+                                            <span style="font-size: 0.85rem; color: #f3f4f6">ابدأ مشروعك</span>
                                         </div>
                                     </a>
                                 </div>

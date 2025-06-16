@@ -1,5 +1,5 @@
 
-        <section id="info" class="py-5" style="background-color: #34495E">
+        <section id="info" class="py-5" style="background-color: #571155">
     <div class="container">
         <div class="row align-items-center flex-column-reverse flex-md-row">
             <!-- الصورة -->
@@ -15,8 +15,8 @@
 
             <!-- النص -->
             <div class="col-md-6 pe-md-4">
-                <h1 class="display-4 fw-bold mb-4" style="color: #f7f7f7" data-aos="fade-left">عن تيار</h1>
-                <p class="lead text-white-50" data-aos="fade-up">
+                <h1 class="display-4 fw-bold mb-4" style="color: #E91E63" data-aos="fade-left">عن تيار</h1>
+                <p class="lead text-white" data-aos="fade-up">
                     تيار شركة تقنيه تسعى لتقديم الحلول التقنية الذكية للجهات الحكومية والخاصة والأفراد من خلال تطوير المواقع والتطبيقات وبناء المشاريع البرمجية بتجربة استخدام عملية و واجهات فريدة.
                 </p>
             </div>
