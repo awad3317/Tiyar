@@ -11,7 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: [
+            '/github/deploy'
+        ]);
+        $middleware->validateSignatures(except: [
+            '/github/deploy',
+            'github/deploy',
+            'github/deploy/*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
