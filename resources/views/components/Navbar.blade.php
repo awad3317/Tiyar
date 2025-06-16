@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  fixed-top shadow-sm py-1" style="min-height: 60px;background-color: #0A2444">
+<nav class="navbar navbar-expand-lg  fixed-top shadow-sm py-1" style="min-height: 60px;background-color: #34495E">
     <div class="container-fluid px-4">
         <!-- الشعار -->
         <a class="navbar-brand py-0" href="#home">
@@ -32,11 +32,15 @@
                     <a class="nav-link py-1 px-3 fw-bold  fs-5" href="#info">من نحن</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link py-1 px-3 fw-bold fs-5" href="#portfolio">اعمالنا</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link py-1 px-3 fw-bold fs-5" href="#how">كيف نعمل</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link py-1 px-3 fw-bold fs-5" href="#service">ماذا نقدم</a>
                 </li>
+
             </ul>
 
             <!-- زر ابدأ مشروعك (للشاشات الكبيرة فقط) -->
@@ -44,7 +48,7 @@
                 <button type="button" class="btn btn-light btn-sm py-1 px-2 mt-auto service-btn text-white" style="background-color: #1d0948" data-bs-toggle="modal" data-bs-target="#projectModal">
                     <div class="d-flex align-items-center">
                         <img src="{{ asset('images/Vector.svg') }}" alt="ابدأ مشروعك" width="20" height="15" class="ms-1">
-                        <span style="font-size: 1rem;">ابدأ مشروعك</span>
+                        <span style="font-size: 1rem;color:  #ED8936">ابدأ مشروعك</span>
                     </div>
                 </button>
             </div>
