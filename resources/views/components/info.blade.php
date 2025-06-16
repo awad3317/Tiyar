@@ -5,7 +5,7 @@
             <!-- الصورة -->
             <div class="col-md-6 mt-4 mt-md-0 px-4 px-md-0">
                 <img
-                    src="{{ asset('images/Info.svg') }}"
+                    src="{{ asset('images/info.svg') }}"
                     alt="Info section image"
                     class="img-fluid p-md-5 pt-4 pt-md-0"
                     loading="lazy"
