@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg  fixed-top shadow-sm py-1" style="min-height: 60px;background-color: #34495E">
     <div class="container-fluid px-4">
         <!-- الشعار -->
-{{--        <a class="navbar-brand py-0" href="#home">--}}
-{{--            <img src="{{ asset('images/Tiyar.svg') }}" alt="Tiyar logo" width="100" height="100">--}}
-{{--        </a>--}}
+        <a class="navbar-brand py-0" href="#home">
+            <img src="{{ asset('images/Tiyar.svg') }}" alt="Tiyar logo" width="100" height="100">
+        </a>
 
         <!-- زر القائمة المختصرة -->
         <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
