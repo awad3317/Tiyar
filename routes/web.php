@@ -20,6 +20,6 @@ Route::post('/github/deploy', function (Request $request){
             abort(403, 'Unauthorized');
         }
         
-        exec('cd /home/wajhah/htdocs/Wajhah-Project && git pull origin main');
+        exec('cd /home/tiyar/htdocs/Tiyar && git pull origin main');
         return response()->json(['status' => 'Deployed']);
 });
