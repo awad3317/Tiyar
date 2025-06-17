@@ -1,5 +1,5 @@
 
-        <section id="info" class="py-5" style="background-color: #571155">
+        <section id="info" class="py-5" style="background-color: #735eb3">
     <div class="container">
         <div class="row align-items-center flex-column-reverse flex-md-row">
             <!-- الصورة -->
@@ -15,7 +15,7 @@
 
             <!-- النص -->
             <div class="col-md-6 pe-md-4">
-                <h1 class="display-4 fw-bold mb-4" style="color: #E91E63" data-aos="fade-left">عن تيار</h1>
+                <h1 class="display-4 fw-bold mb-4" style="color: #f1f0ef" data-aos="fade-left">عن تيار</h1>
                 <p class="lead text-white" data-aos="fade-up">
                     تيار شركة تقنيه تسعى لتقديم الحلول التقنية الذكية للجهات الحكومية والخاصة والأفراد من خلال تطوير المواقع والتطبيقات وبناء المشاريع البرمجية بتجربة استخدام عملية و واجهات فريدة.
                 </p>
@@ -23,19 +23,3 @@
         </div>
     </div>
 </section>
-
-
-@push('scripts')
-<script>
-    $(document).ready(function() {
-        AOS.init({
-            easing: 'ease-out-quad',
-            duration: 1000,
-        });
-    });
-</script>
-@endpush
-
-@push('styles')
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-@endpush

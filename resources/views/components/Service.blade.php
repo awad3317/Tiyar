@@ -1,10 +1,9 @@
 <section id="service" class="py-5" style="background-color: #F4F4F4">
     <div class="container py-4">
-        <h1 class="display-4 fw-bold mb-5" style="color: #E91E63" data-aos="fade-left">خدماتنا</h1>
+        <h1 class="display-4 fw-bold mb-5" style="color: #571170" data-aos="fade-left">خدماتنا</h1>
 <style>
     .h6{
         color:#571170;
-
     }
 </style>
         <div class="row g-4">

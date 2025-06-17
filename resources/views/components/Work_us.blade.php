@@ -1,6 +1,6 @@
 <section id="portfolio" class="py-5" style="background-color: #F4F4F4">
     <div class="container py-4">
-        <h1 class="display-4 fw-bold mb-4 text-center" style="color: #E91E63" data-aos="fade-up">أعمالنا</h1>
+        <h1 class="display-4 fw-bold mb-4 text-center" style="color: #571170" data-aos="fade-up">أعمالنا</h1>
 
         <!-- فلترة التصنيفات -->
         <div class="text-center mb-5">

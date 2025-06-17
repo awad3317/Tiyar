@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg  fixed-top shadow-sm py-1" style="min-height: 60px;background-color: #34495E">
+<nav class="navbar navbar-expand-lg  fixed-top shadow-sm py-1" style="min-height: 60px;background-color: #ffffff">
     <div class="container-fluid px-4">
         <!-- الشعار -->
         <a class="navbar-brand py-0" href="#home">
-            <img src="{{ asset('images/Tiyar.svg') }}" alt="Tiyar logo" width="100" height="100">
+            <img src="{{ asset('images/Tiyar.png') }}" alt="Tiyar logo" width="200" height="80">
         </a>
 
         <!-- زر القائمة المختصرة -->
@@ -11,7 +11,7 @@
         </button>
             <style>
                 .nav-item  a{
-                    color: #ffffff;
+                    color: #34495E;
                 }
                 .nav-item  a:hover {
                     color: #571170;

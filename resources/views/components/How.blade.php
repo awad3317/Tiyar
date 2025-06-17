@@ -1,9 +1,9 @@
 <section id="how" class="py-5" style="background-color: #F4F4F4;" >
     <div class="container">
-        <h1 class="display-4 fw-bold mb-5" style="color: #E91E63" data-aos="fade-left">كيف نعمل</h1>
+        <h1 class="display-4 fw-bold mb-5" style="color: #571170" data-aos="fade-left">كيف نعمل</h1>
 <style>
     .h3{
-        color: #E91E63;
+        color: #571170;
     }
     .display-1{
         color: #3E92CC;

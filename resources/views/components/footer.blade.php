@@ -1,8 +1,8 @@
-<footer style="background-color: #571170">
+<footer style="background-color: #735eb3">
     <div class="container py-5 d-flex flex-column justify-content-center align-items-center">
         <!-- الصورة الرئيسية -->
         <img
-            src="{{ asset('images/Tiyar.png') }}"
+            src="{{ asset('images/Tiyar1.png') }}"
             alt="Tiyar logo for footer"
             width="190"
             height="150"
