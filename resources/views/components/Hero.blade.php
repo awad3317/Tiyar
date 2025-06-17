@@ -14,7 +14,7 @@
                     </h1>
 
                     <div class="my-4" data-aos="fade-down" >
-                        <button type="button" class="btn btn-primary py-3 px-5 service-btn" data-bs-toggle="modal" data-bs-target="#projectModal">
+                        <button type="button" class="btn btn-primary py-3 px-5 service-btn" style="background: linear-gradient(135deg, #571170 0%, #735eb3 100%);" data-bs-toggle="modal" data-bs-target="#projectModal">
                             <div class="d-flex align-items-center justify-content-center">
                                 <img src="{{ asset('images/Vector.svg') }}" alt="ابدأ مشروعك" width="24" height="20" class="ms-2">
                                 <span style="font-size: 1.1rem;color:#ffffff">ابدأ مشروعك</span>
