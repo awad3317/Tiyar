@@ -11,7 +11,7 @@ Route::get('/order', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 
 Route::get('/admin', function () {
-    return view('admin.dashboard');
+    return 'مرحبا بك في لوحة التحكم';
 });
 
 Route::post('/github/deploy', function (Request $request){
