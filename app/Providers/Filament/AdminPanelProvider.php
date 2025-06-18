@@ -36,9 +36,9 @@ class AdminPanelProvider extends PanelProvider
                 'warning' => Color::Amber,
             ])
             ->font('Oswald')
-            ->brandLogo(asset('images/Tiyar.png'))
+            ->brandLogo(asset('images/Tiyar2.png'))
             ->brandLogoHeight('3.5rem')
-            ->favicon(asset('images/Tiyar.png'))
+            ->favicon(asset('images/Tiyar2.png'))
             ->brandName('Tiyar platform')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
