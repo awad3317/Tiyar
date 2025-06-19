@@ -2,7 +2,7 @@
     <div class="container-fluid px-4">
         <!-- الشعار -->
         <a class="navbar-brand py-0" href="#home">
-            <img src="{{ asset('images/Tiyar2.png') }}" alt="Tiyar logo" width="200" height="80">
+            <img src="{{ asset('images/Tiyar.png') }}" alt="Tiyar logo" width="200" height="80">
         </a>
 
         <!-- زر القائمة المختصرة -->

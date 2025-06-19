@@ -32,7 +32,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function canAccessFilament(): bool
+    {
+        // بإمكانك تخصيص الشروط لاحقاً
+        return true;
+    }
     /**
      * Get the attributes that should be cast.
      *

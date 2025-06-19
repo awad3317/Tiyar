@@ -10,9 +10,7 @@ Route::get('/', [OrderController::class, 'index']);
 Route::get('/order', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order', [OrderController::class, 'store'])->name('order.store');
 
-Route::get('/admin', function () {
-    return 'مرحبا بك في لوحة التحكم';
-});
+
 
 Route::post('/github/deploy', function (Request $request){
     $secret = '14171417Nn';
