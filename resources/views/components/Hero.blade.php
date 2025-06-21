@@ -5,12 +5,12 @@
             <div class="col-md-7 order-md-1 order-1 mt-md-2 mt-5" data-aos="fade-left">
                 <div class="hero-text mb-4 mb-md-0">
                     <h1 class="display-4 fw-medium text-dark mb-3">
-                        نقود
-                        <span class="fw-bold changing-text" style="color: #34495E;">تيار</span>
+                        نقودك
+                        <span class="fw-bold changing-text" style="color: #34495E;"></span>
                     </h1>
 
                     <h1 class="display-4 fw-medium text-dark mb-4">
-                        التقنية لنُحدث الفرق في عالمك الرقمي
+                        التقني لنُحدث الفرق في عالمك الرقمي
                     </h1>
 
                     <div class="my-4" data-aos="fade-down" >
@@ -47,7 +47,7 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const words = ["تيار", "الابتكار", "الإبداع", "التحول الرقمي", "التقنية"];
+            const words = [ "للابتكار", "للابداع", "لتحول الرقمي", "لتقنية"];
             let currentIndex = 0;
             const textElement = document.querySelector(".changing-text");
 

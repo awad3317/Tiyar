@@ -43,7 +43,6 @@ class ServiceResource extends Resource
                 FileUpload::make('icon_service')
                     ->label('أيقونة الخدمة')
                     ->image()
-                    ->directory('services/icons')
                     ->preserveFilenames()
                     ->imagePreviewHeight('100')
                     ->required(),
