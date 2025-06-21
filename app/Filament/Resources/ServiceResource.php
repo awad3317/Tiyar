@@ -6,10 +6,14 @@ use App\Filament\Resources\ServiceResource\Pages;
 use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -17,21 +21,32 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-cog';
     protected static ?string $navigationLabel = 'الخدمات';
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
+    protected static ?string $pluralLabel = 'الخدمات';
+    protected static ?string $label = 'خدمة';
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                ->required()
-                ->columnSpanFull(),
-                Forms\Components\FileUpload::make('icon_service')
+                TextInput::make('name')
+                    ->label('اسم الخدمة')
                     ->required()
-                ->image()
-                ->columnSpanFull(),
+                    ->maxLength(255),
+
+                Textarea::make('description')
+                    ->label('الوصف')
+                    ->rows(4)
+                    ->nullable(),
+
+                FileUpload::make('icon_service')
+                    ->label('أيقونة الخدمة')
+                    ->image()
+                    ->directory('services/icons')
+                    ->preserveFilenames()
+                    ->imagePreviewHeight('100')
+                    ->required(),
             ]);
     }
 
@@ -39,7 +54,19 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('icon_service')
+                    ->label('الأيقونة')
+                    ->circular()
+                    ->height(40),
+
+                TextColumn::make('name')
+                    ->label('الاسم')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('description')
+                    ->label('الوصف')
+                    ->limit(50),
             ])
             ->filters([
                 //

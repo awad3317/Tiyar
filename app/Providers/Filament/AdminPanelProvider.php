@@ -28,18 +28,8 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'danger' => Color::Purple,
-                'gray' => Color::Slate,
-                'info' => Color::Blue,
-                'primary' => Color::Yellow,
-                'success' => Color::Emerald,
-                'warning' => Color::Amber,
+                'primary' => Color::Amber,
             ])
-            ->font('Oswald')
-            ->brandLogo(asset('images/tiyar.png'))
-            ->brandLogoHeight('3.5rem')
-            ->favicon(asset('images/tiyar.png'))
-            ->brandName('Tiyar platform')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
