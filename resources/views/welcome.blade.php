@@ -8,8 +8,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="{{ asset('css/custom_CSS.css') }}">
+
+    <title>تيار للحلول والابتكار | تصميم مواقع وتطبيقات احترافية</title>
+    <meta name="description" content="شركة تيار للحلول والابتكار شركة تقنية متخصصة في تصميم وتطوير المواقع، التطبيقات، والتصاميم الإبداعية. نقدم حلول رقمية متكاملة ترتقي بأعمالك.">
+    <meta name="keywords" content="تصميم مواقع، تطبيقات، شركة تقنية، تيار، حلول رقمية، تطوير، برمجة، تصميم، UX UI">
+    <meta name="author" content="Tiyar Solutions">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="تيار للحلول والابتكار | تصميم مواقع وتطبيقات احترافية">
+    <meta property="og:description" content="شركة تيار متخصصة في تصميم وتطوير المواقع، التطبيقات، والتصاميم الإبداعية. حلول رقمية مبتكرة لأعمالك.">
+    <meta property="og:image" content="{{ asset('images/preview.png') }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="تيار للحلول والابتكار | تصميم مواقع وتطبيقات احترافية">
+    <meta name="twitter:description" content="شركة تيار متخصصة في تصميم وتطوير المواقع، التطبيقات، والتصاميم الإبداعية. حلول رقمية مبتكرة لأعمالك.">
+    <meta name="twitter:image" content="{{ asset('images/preview.png') }}">
+
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarContent" data-bs-offset="100">
 @if(session('success') || session('error'))
