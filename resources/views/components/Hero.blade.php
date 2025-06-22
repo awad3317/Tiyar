@@ -27,7 +27,7 @@
             <!-- الصورة -->
             <div class="col-md-5 order-md-2 order-2 mt-1 mt-md-2" data-aos="fade-right">
                 <img
-                    src="{{ asset('images/team_code.png') }}"
+                    src="{{ asset('images/team_code1.png') }}"
                     alt="Hero section image"
                     class="img-fluid p-md-4 mt-3"
                     loading="lazy"
