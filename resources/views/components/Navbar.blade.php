@@ -14,13 +14,12 @@
                     color: #34495E;
                 }
                 .nav-item  a:hover {
-                    color: #571170;
+                    color: #735eb3;
                 }
                 .nav-link.active {
-                   color: #571170 !important;
+                   color: #735eb3 !important;
                     font-weight: bold;
                         }
-
                 </style>
         <!-- محتوى القائمة -->
         <div class="collapse navbar-collapse" id="navbarContent">

@@ -61,7 +61,7 @@
                         alt="instagram logo"
                         width="16"
                         height="16"
-                        class="ms-2"
+                        class="ms-2 "
                     >
                     <span style="color: white" class="small">انستجرام</span>
                 </div>

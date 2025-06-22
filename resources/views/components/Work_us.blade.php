@@ -1,13 +1,15 @@
 <section id="portfolio" class="py-5" style="background-color: #F4F4F4">
     <div class="container py-4">
         <h1 class="display-4 fw-bold mb-4 text-center" style="color: #571170" data-aos="fade-up">أعمالنا</h1>
+        <style>
 
+        </style>
         <!-- فلترة التصنيفات -->
         <div class="text-center mb-5">
-            <button class="btn btn-outline-primary btn-sm rounded-pill mx-1 filter-btn active" data-filter="all">الكل</button>
-            <button class="btn btn-outline-primary btn-sm rounded-pill mx-1 filter-btn" data-filter="web">مواقع إلكترونية</button>
-            <button class="btn btn-outline-primary btn-sm rounded-pill mx-1 filter-btn" data-filter="app">تطبيقات</button>
-            <button class="btn btn-outline-primary btn-sm rounded-pill mx-1 filter-btn" data-filter="graphic">تصاميم</button>
+            <button class="btn btn-light btn-sm rounded-pill mx-1 filter-btn active" data-filter="all">الكل</button>
+            <button class="btn bt btn-sm rounded-pill mx-1 filter-btn" data-filter="web">مواقع إلكترونية</button>
+            <button class="btn bt btn-sm rounded-pill mx-1 filter-btn" data-filter="app">تطبيقات</button>
+            <button class="btn bt btn-sm rounded-pill mx-1 filter-btn" data-filter="graphic">تصاميم</button>
         </div>
 
         <div class="row g-4" id="portfolio-items">
@@ -27,7 +29,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="alert alert-info" role="alert">
+                        <div class="alert text-white " style="background-color: #735eb3" role="alert">
                             <i class="fas fa-info-circle me-2"></i> لا يوجد مشاريع حالياً
                         </div>
                     @endif
@@ -35,7 +37,7 @@
                 @endforeach
             @else
                 <div class="col-12 text-center py-5">
-                    <div class="alert alert-info" role="alert">
+                    <div class="alert text-white" style="background-color: #735eb3" role="alert">
                         <i class="fas fa-info-circle me-2"></i> لا يوجد مشاريع حالياً
                     </div>
                 </div>
@@ -52,8 +54,18 @@
         border-radius: 0.75rem 0.75rem 0 0;
     }
     .filter-btn.active {
-        background-color: #0A2463;
+        background-color: #735eb3;
         color: white;
+    }
+    .bt {
+        border-color: #735eb3;
+        background-color: #FFFFFF;
+        color: #735eb3;
+    }
+    .bt:hover {
+        border-color: #735eb3;
+        background-color: #735eb3;
+        color: #FFFFFF;
     }
 </style>
 

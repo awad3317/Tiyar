@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-light rounded-pill px-4 py-2 text-white" style="background-color: #0A2463 ">
+                        <button type="submit" class="btn btn-light rounded-pill px-4 py-2 text-white" style="background-color: #571170 ">
                             <img src="{{ asset('images/Vector.svg') }}" alt="Send icon" width="15" class="me-2">
                             ارسال
                         </button>

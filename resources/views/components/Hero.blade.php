@@ -6,11 +6,11 @@
                 <div class="hero-text mb-4 mb-md-0">
                     <h1 class="display-4 fw-medium text-dark mb-3">
                         نقودك
-                        <span class="fw-bold changing-text" style="color: #34495E;"></span>
+                        <span class="fw-bold changing-text" style="color: #571170;"></span>
                     </h1>
 
                     <h1 class="display-4 fw-medium text-dark mb-4">
-                        التقني لنُحدث الفرق في عالمك الرقمي
+                         لنُحدث الفرق في عالمك الرقمي
                     </h1>
 
                     <div class="my-4" data-aos="fade-down" >
