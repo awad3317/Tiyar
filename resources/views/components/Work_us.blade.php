@@ -6,7 +6,7 @@
         </style>
         <!-- فلترة التصنيفات -->
         <div class="text-center mb-5">
-            <button class="btn btn-light btn-sm rounded-pill mx-1 filter-btn active" data-filter="all">الكل</button>
+            <button class="btn bt btn-sm rounded-pill mx-1 filter-btn active" data-filter="all">الكل</button>
             <button class="btn bt btn-sm rounded-pill mx-1 filter-btn" data-filter="web">مواقع إلكترونية</button>
             <button class="btn bt btn-sm rounded-pill mx-1 filter-btn" data-filter="app">تطبيقات</button>
             <button class="btn bt btn-sm rounded-pill mx-1 filter-btn" data-filter="graphic">تصاميم</button>
