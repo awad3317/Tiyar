@@ -6,6 +6,8 @@ use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -23,22 +25,39 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
+                TextInput::make('title')
                     ->required()
                     ->maxLength(100)
-                    ->label('عنوان المشروع '),
-                Forms\Components\TextInput::make('description')
+                    ->label('عنوان المشروع'),
+                TextInput::make('description')
                     ->required()
                     ->maxLength(100)
                     ->label('وصف المشروع'),
-                Forms\Components\TextInput::make('type')
+                Forms\Components\Select::make('type')
                     ->required()
-                    ->maxLength(100)
-                    ->label('نوع المشروع'),
-                Forms\Components\TextInput::make('link')
-                    ->required()
-                    ->maxLength(100)
-                    ->label('رابط المشروع'),
+                    ->label('نوع المشروع')
+                    ->options([
+                        'web' => 'موقع إلكتروني',
+                        'app' => 'تطبيق',
+                        'graphic' => 'تصميم',
+                    ])
+                    ->native(false) // شكل أجمل (قائمة منسدلة محسنة)
+                    ->searchable(), // للبحث داخل القائمة إذا كبرت لاحقاً
+
+
+        TextInput::make('link')
+                    ->label('رابط المشروع (رابط خارجي)')
+                    ->maxLength(255)
+                    ->nullable()
+                    ->hint('يمكن تركه فارغًا إذا تم رفع ملف PDF'),
+
+                FileUpload::make('pdf_file')
+                    ->label('ملف PDF للمشروع')
+                    ->directory('projects-pdfs')
+                    ->acceptedFileTypes(['application/pdf'])
+                    ->maxSize(20480) // 20MB
+                    ->nullable()
+                    ->helperText('يمكن رفع ملف PDF بدلاً من الرابط الخارجي'),
             ]);
     }
 

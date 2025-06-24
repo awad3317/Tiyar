@@ -1,9 +1,8 @@
+@php use Illuminate\Support\Str; @endphp
 <section id="portfolio" class="py-5" style="background-color: #F4F4F4">
     <div class="container py-4">
         <h1 class="display-4 fw-bold mb-4 text-center" style="color: #571170" data-aos="fade-up">أعمالنا</h1>
-        <style>
 
-        </style>
         <!-- فلترة التصنيفات -->
         <div class="text-center mb-5">
             <button class="btn bt btn-sm rounded-pill mx-1 filter-btn active" data-filter="all">الكل</button>
@@ -15,25 +14,29 @@
         <div class="row g-4" id="portfolio-items">
             @if(isset($projects) && count($projects) > 0)
                 @foreach($projects as $project)
-                    @if(isset($project->type))
-                        <div class="col-lg-4 col-md-6 portfolio-item" data-category="{{$project->type}}" data-aos="zoom-in">
-                            <div class="card h-100 shadow-sm border-0 rounded-4">
-                                <div class="ratio ratio-16x9 rounded-top-4">
-                                    <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($project->link) }}&dimension=1024x768" alt="لقطة الموقع">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$project->title}}</h5>
-                                    <p class="card-text text-muted small">{{$project->description}}</p>
-                                    <a href="{{$project->link}}" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">زيارة المشروع</a>
-                                </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="{{ $project->type }}" data-aos="zoom-in">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <div class="ratio ratio-16x9 rounded-top-4">
+                                @php
+                                    $isPdf = Str::endsWith($project->link, '.pdf');
+                                    $url = $isPdf ? asset($project->link) : $project->link;
+                                @endphp
+
+                                @if($isPdf)
+                                    <iframe src="{{ $url }}"></iframe>
+                                @else
+                                    <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768" alt="لقطة الموقع">
+                                @endif
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $project->title }}</h5>
+                                <p class="card-text text-muted small">{{ $project->description }}</p>
+                                <a href="{{ $url }}" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">
+                                    {{ $isPdf ? 'عرض الملف' : 'زيارة المشروع' }}
+                                </a>
                             </div>
                         </div>
-                    @else
-                        <div class="alert text-white " style="background-color: #735eb3" role="alert">
-                            <i class="fas fa-info-circle me-2"></i> لا يوجد مشاريع حالياً
-                        </div>
-                    @endif
-
+                    </div>
                 @endforeach
             @else
                 <div class="col-12 text-center py-5">
@@ -53,15 +56,18 @@
         border: none;
         border-radius: 0.75rem 0.75rem 0 0;
     }
+
     .filter-btn.active {
         background-color: #735eb3;
         color: white;
     }
+
     .bt {
         border-color: #735eb3;
         background-color: #FFFFFF;
         color: #735eb3;
     }
+
     .bt:hover {
         border-color: #735eb3;
         background-color: #735eb3;
