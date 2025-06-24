@@ -58,6 +58,7 @@ class ProjectController extends Controller
                 'title' => $project->title,
                 'description' => $project->description,
                 'type' => $project->type,
+                'link' => $project->link,
                 'is_pdf' => $isPdf,
                 'url' => $isPdf ? asset($project->link) : $project->link,
             ];
