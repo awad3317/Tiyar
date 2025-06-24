@@ -31,7 +31,14 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('customer_name')
+                    ->label('اسم العميل'),
+                Tables\Columns\TextColumn::make('customer_phone')
+                    ->label('رقم العميل'),
+                Tables\Columns\TextColumn::make('notes')
+                    ->label('ملاحظات العميل'),
+                Tables\Columns\TextColumn::make('service.name')
+                    ->label('الخدمه المطلوبه من قبل العميل')
             ])
             ->filters([
                 //

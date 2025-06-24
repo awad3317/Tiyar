@@ -23,7 +23,22 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(100)
+                    ->label('عنوان المشروع '),
+                Forms\Components\TextInput::make('description')
+                    ->required()
+                    ->maxLength(100)
+                    ->label('وصف المشروع'),
+                Forms\Components\TextInput::make('type')
+                    ->required()
+                    ->maxLength(100)
+                    ->label('نوع المشروع'),
+                Forms\Components\TextInput::make('link')
+                    ->required()
+                    ->maxLength(100)
+                    ->label('رابط المشروع'),
             ]);
     }
 
@@ -31,7 +46,14 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title')
+                    ->label('عنوان المشروع'),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('وصف المشروع'),
+                Tables\Columns\TextColumn::make('type')
+                    ->label('نوع المشروع'),
+                Tables\Columns\TextColumn::make('link')
+                    ->label('رابط المشروع'),
             ])
             ->filters([
                 //

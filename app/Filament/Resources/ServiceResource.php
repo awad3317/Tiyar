@@ -45,7 +45,8 @@ class ServiceResource extends Resource
                     ->image()
                     ->preserveFilenames()
                     ->imagePreviewHeight('100')
-                    ->required(),
+                    ->required()
+                ->columnSpanFull(),
             ]);
     }
 
