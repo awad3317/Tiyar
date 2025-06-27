@@ -3,9 +3,9 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -15,21 +15,20 @@ use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-cog';
+    protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
     protected static ?string $navigationLabel = 'الخدمات';
-    protected static ?string $pluralLabel = 'الخدمات';
-    protected static ?string $label = 'خدمة';
+    protected static ?string $modelLabel = 'خدمة';
+    protected static ?string $pluralModelLabel = 'الخدمات';
+
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
+        return $form->schema([
+            Card::make([
                 TextInput::make('name')
                     ->label('اسم الخدمة')
                     ->required()
@@ -37,42 +36,51 @@ class ServiceResource extends Resource
 
                 Textarea::make('description')
                     ->label('الوصف')
-                    ->rows(4)
-                    ->nullable(),
+                    ->rows(3)
+                    ->placeholder('اكتب وصفًا مختصرًا عن الخدمة...')
+                    ->hint('الوصف يظهر داخل الجدول ويمكن تركه فارغاً'),
 
                 FileUpload::make('icon_service')
                     ->label('أيقونة الخدمة')
                     ->image()
+                    ->imageEditor()
                     ->preserveFilenames()
                     ->imagePreviewHeight('100')
                     ->required()
-                ->columnSpanFull(),
-            ]);
+                    ->columnSpanFull()
+                    ->helperText('يفضّل أن تكون الصورة مربعة 1:1'),
+            ])->columns(2),
+        ]);
     }
 
     public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                ImageColumn::make('icon_service')
-                    ->label('الأيقونة')
-                    ->circular()
-                    ->height(40),
+        return $table->columns([
+            ImageColumn::make('icon_service')
+                ->label('الأيقونة')
+                ->circular()
+                ->height(50)
+                ->tooltip('أيقونة الخدمة'),
 
-                TextColumn::make('name')
-                    ->label('الاسم')
-                    ->searchable()
-                    ->sortable(),
+            TextColumn::make('name')
+                ->label('الاسم')
+                ->sortable()
+                ->searchable()
+                ->icon('heroicon-o-hashtag')
+                ->color('primary'),
 
-                TextColumn::make('description')
-                    ->label('الوصف')
-                    ->limit(50),
-            ])
-            ->filters([
-                //
-            ])
+            TextColumn::make('description')
+                ->label('الوصف')
+                ->badge()
+                ->color('gray')
+                ->limit(40)
+                ->placeholder('لا يوجد وصف'),
+        ])
+            ->defaultSort('name')
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -83,9 +91,7 @@ class ServiceResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('developers', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_name');
-            $table->string('customer_phone');
+            $table->string('name');
+            $table->string('email')->unique()->nullable();
+            $table->string('phone')->nullable();
+            $table->string('position')->nullable();
+            $table->string('evaluation')->nullable();
+            $table->text('skills')->nullable();
             $table->text('notes')->nullable();
-            $table->foreignId('project_id')->nullable()->constrained()->onDelete('cascade');
-            $table->foreignId('service_id')->nullable()->constrained()->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('developer');
     }
 };
