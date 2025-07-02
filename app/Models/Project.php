@@ -6,10 +6,34 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $fillable = ['title', 'description', 'type', 'link'];
+    protected $fillable = [
+        'title', 'description', 'type', 'link',
+        'order_id', 'service_id', 'developer_id',
+        'start_date', 'delivery_date', 'price', 'price_for_company', 'status'
+    ];
 
-    public function orders()
+    public function order()
     {
-        return $this->hasMany(Order::class);
+        return $this->belongsTo(Order::class);
     }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    public function developer()
+    {
+        return $this->belongsTo(Developer::class);
+    }
+    public function developers()
+    {
+        return $this->belongsToMany(Developer::class, 'developer_project');
+    }
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class, 'developer_project');
+    }
+
+
 }

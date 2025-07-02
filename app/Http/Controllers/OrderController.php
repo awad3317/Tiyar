@@ -15,8 +15,7 @@ class OrderController extends Controller
     public function index()
     {
         $services = Service::all();
-        $projects = Project::all();
-        return view('welcome', compact('services','projects'));
+        return view('welcome', compact('services'));
     }
 
     /**
@@ -25,7 +24,6 @@ class OrderController extends Controller
     public function create()
     {
         return view('orders.create', [
-            'projects' => Project::all(),
             'services' => Service::all()
         ]);
     }

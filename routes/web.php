@@ -1,14 +1,19 @@
 <?php
 
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
+Route::get('/', [ProjectController::class, 'showPortfolio'])->name('home');
 
-Route::get('/', [OrderController::class, 'index']);
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 Route::get('/order', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+
+Route::resource('projects', ProjectController::class)->except(['index']);
+
 
 
 
