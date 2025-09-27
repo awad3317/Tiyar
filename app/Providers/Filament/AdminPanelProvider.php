@@ -38,7 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->brandLogo(asset('images/Tiyar.png'))
             ->brandLogoHeight('3rem')
-            ->darkModeBrandLogo(asset('images/Tiyar-dark.png'))
+            ->darkModeBrandLogo(asset('images/Tiyar1.png'))
 
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
