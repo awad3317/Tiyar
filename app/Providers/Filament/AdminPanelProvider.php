@@ -29,7 +29,17 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'primary' => Color::Amber,
+                'success' => Color::Green,
+                'danger' => Color::Red,
+                'info' => Color::Blue,
+                'warning' => Color::Yellow,
+                'gray' => Color::Gray,
+
             ])
+            ->brandLogo(asset('images/Tiyar.png'))
+            ->brandLogoHeight('3rem')
+            ->darkModeBrandLogo(asset('images/Tiyar-dark.png'))
+
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
