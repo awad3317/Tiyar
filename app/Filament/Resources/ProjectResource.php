@@ -71,6 +71,12 @@ class ProjectResource extends Resource
                         ->nullable()
                         ->helperText('ارفع ملف المشروع بدلاً من الرابط (اختياري)'),
                 ]),
+                   FileUpload::make('image')
+                        ->label('صورة المشروع')
+                        ->directory('projects')
+                        ->acceptedFileTypes(['image/*'])
+                        ->helperText('ارفع صورة للمشروع (اختياري)')
+                        ->nullable(),
 
             Section::make('الموظفين والخدمة')
                 ->columns(2)

@@ -23,11 +23,15 @@
                                     $url = $isPdf ? asset($project->link) : $project->link;
                                 @endphp
 
-                                @if ($isPdf)
-                                    {{-- <iframe src="{{ $url }}"></iframe> --}}
-                                    <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768"
-                                        alt="لقطة للملف PDF">
+                                 @if ($isPdf)
+                                    {{-- إذا الملف PDF --}}
+                                    @if ($project->image)
+                                        <img src="{{ asset($project->image) }}" alt="صورة المشروع">
+                                    @else
+                                        <img src="{{ asset('images/pdf-placeholder.png') }}" alt="ملف PDF">
+                                    @endif
                                 @else
+                                    {{-- إذا كان رابط (موقع/تطبيق) --}}
                                     <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768"
                                         alt="لقطة الموقع">
                                 @endif

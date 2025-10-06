@@ -35,11 +35,17 @@ class ProjectController extends Controller
             'type' => 'required|string|max:100',
             'description' => 'nullable|string',
             'link' => 'nullable|url',
-            'file' => 'nullable|file|mimes:pdf|max:20480',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'pdf_file' => 'nullable|file|mimes:pdf|max:20480',
         ]);
 
-        if ($request->hasFile('file')) {
-            $path = $request->file('file')->store('projects', 'public');
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('projects', 'public');
+            $data['image'] = 'storage/' . $path;
+        }
+
+        if ($request->hasFile('pdf_file')) {
+            $path = $request->file('pdf_file')->store('projects-pdfs', 'public');
             $data['link'] = 'storage/' . $path;
         }
 
@@ -60,6 +66,7 @@ class ProjectController extends Controller
                 'type' => $project->type,
                 'link' => $project->link,
                 'is_pdf' => $isPdf,
+                'image' => $project->image,
                 'url' => $isPdf ? asset($project->link) : $project->link,
             ];
         });

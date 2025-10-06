@@ -9,7 +9,7 @@ class Project extends Model
     protected $fillable = [
         'title', 'description', 'type', 'link',
         'order_id', 'service_id', 'developer_id',
-        'start_date', 'delivery_date', 'price', 'price_for_company', 'status'
+        'start_date', 'delivery_date', 'price', 'price_for_company', 'status', 'image',
     ];
 
     public function order()

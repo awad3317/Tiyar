@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('type');
             $table->string('link');
-            $table->string('preview')->nullable();
+            $table->string('image')->nullable();
             $table->foreignId('service_id')->constrained()->onDelete('cascade');
             $table->date('start_date')->nullable();
             $table->date('delivery_date')->nullable();
