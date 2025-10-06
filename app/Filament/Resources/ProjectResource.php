@@ -64,13 +64,12 @@ class ProjectResource extends Resource
                         ->placeholder('مثال: https://example.com')
                         ->maxLength(255),
 
-                    FileUpload::make('file')
+                    FileUpload::make('pdf_file')
                         ->label('ملف PDF')
                         ->directory('projects-pdfs')
                         ->acceptedFileTypes(['application/pdf'])
                         ->nullable()
                         ->helperText('ارفع ملف المشروع بدلاً من الرابط (اختياري)'),
-
                 ]),
 
             Section::make('الموظفين والخدمة')
@@ -135,7 +134,7 @@ class ProjectResource extends Resource
             TextColumn::make('type')
                 ->label('النوع')
                 ->badge()
-                ->color(fn(string $state): string => match ($state) {
+                ->color(fn (string $state): string => match ($state) {
                     'web' => 'info',
                     'app' => 'success',
                     'graphic' => 'warning',
@@ -174,7 +173,7 @@ class ProjectResource extends Resource
                     'completed' => 'success',
                     'delivered' => 'primary',
                 ])
-                ->formatStateUsing(fn($state) => match ($state) {
+                ->formatStateUsing(fn($state) => match($state) {
                     'in_progress' => 'قيد التنفيذ',
                     'completed' => 'مكتمل',
                     'delivered' => 'تم التسليم',
