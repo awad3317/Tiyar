@@ -40,7 +40,7 @@ class ProjectController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('projects-pdfs', 'public');
+            $path = $request->file('image')->store('projects', 'public');
             $data['image'] = 'storage/' . $path;
         }
 
