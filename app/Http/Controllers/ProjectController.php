@@ -6,6 +6,8 @@ use App\Models\Project;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Services\ImageService;
+
 
 class ProjectController extends Controller
 {
@@ -38,11 +40,16 @@ class ProjectController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
             'pdf_file' => 'nullable|file|mimes:pdf|max:20480',
         ]);
-
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('projects', 'public');
-            $data['image'] = 'storage/' . $path;
+        if($request->hasFile('image')){
+            $imageService = new ImageService();
+            $data['image'] = $imageService->saveImage($request->file('image'), 'projects');
         }
+
+        
+        // if ($request->hasFile('image')) {
+        //     $path = $request->file('image')->store('projects', 'public');
+        //     $data['image'] = 'storage/' . $path;
+        // }
 
         if ($request->hasFile('pdf_file')) {
             $path = $request->file('pdf_file')->store('projects-pdfs', 'public');
@@ -58,6 +65,7 @@ class ProjectController extends Controller
     {
         $projects = Project::all()->map(function ($project) {
             $isPdf = Str::endsWith($project->link, '.pdf');
+            
 
             return (object)[
                 'id' => $project->id,
@@ -67,6 +75,7 @@ class ProjectController extends Controller
                 'link' => $project->link,
                 'is_pdf' => $isPdf,
                 'image' => $project->image,
+                
                 'url' => $isPdf ? asset($project->link) : $project->link,
             ];
         });

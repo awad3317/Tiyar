@@ -57,7 +57,7 @@ class ProjectResource extends Resource
                 ]),
 
             Section::make('الربط والملف')
-                ->columns(2)
+                ->columns(3)
                 ->schema([
                     TextInput::make('link')
                         ->label('رابط المشروع')
@@ -70,13 +70,15 @@ class ProjectResource extends Resource
                         ->acceptedFileTypes(['application/pdf'])
                         ->nullable()
                         ->helperText('ارفع ملف المشروع بدلاً من الرابط (اختياري)'),
-                ]),
-                   FileUpload::make('image')
+
+                            FileUpload::make('image')
                         ->label('صورة المشروع')
                         ->directory('projects')
                         ->acceptedFileTypes(['image/*'])
                         ->helperText('ارفع صورة للمشروع (اختياري)')
                         ->nullable(),
+                ]),
+               
 
             Section::make('الموظفين والخدمة')
                 ->columns(2)
