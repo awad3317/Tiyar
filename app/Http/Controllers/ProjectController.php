@@ -15,7 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('welcome', compact('projects'));    }
+        return view('welcome', compact('projects'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +42,9 @@ class ProjectController extends Controller
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('projects', 'public');
-            $data['image'] = 'storage/' . $path;
+            $data['image'] = $path; 
         }
+
 
         if ($request->hasFile('pdf_file')) {
             $path = $request->file('pdf_file')->store('projects-pdfs', 'public');
@@ -75,7 +77,4 @@ class ProjectController extends Controller
 
         return view('welcome', compact('projects', 'services'));
     }
-
-
-
 }
