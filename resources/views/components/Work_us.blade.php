@@ -12,9 +12,10 @@
         </div>
 
         <div class="row g-4" id="portfolio-items">
-            @if(isset($projects) && count($projects) > 0)
-                @foreach($projects as $project)
-                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="{{ $project->type }}" data-aos="zoom-in">
+            @if (isset($projects) && count($projects) > 0)
+                @foreach ($projects as $project)
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="{{ $project->type }}"
+                        data-aos="zoom-in">
                         <div class="card h-100 shadow-sm border-0 rounded-4">
                             <div class="ratio ratio-16x9 rounded-top-4">
                                 @php
@@ -22,16 +23,20 @@
                                     $url = $isPdf ? asset($project->link) : $project->link;
                                 @endphp
 
-                                @if($isPdf)
-                                    <iframe src="{{ $url }}"></iframe>
+                                @if ($isPdf)
+                                    {{-- <iframe src="{{ $url }}"></iframe> --}}
+                                    <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768"
+                                        alt="لقطة للملف PDF">
                                 @else
-                                    <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768" alt="لقطة الموقع">
+                                    <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768"
+                                        alt="لقطة الموقع">
                                 @endif
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $project->title }}</h5>
                                 <p class="card-text text-muted small">{{ $project->description }}</p>
-                                <a href="{{ $url }}" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">
+                                <a href="{{ $url }}" target="_blank"
+                                    class="btn btn-outline-primary btn-sm rounded-pill">
                                     {{ $isPdf ? 'عرض الملف' : 'زيارة المشروع' }}
                                 </a>
                             </div>
@@ -83,7 +88,8 @@
 
             const category = button.getAttribute('data-filter');
             document.querySelectorAll('.portfolio-item').forEach(item => {
-                item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
+                item.style.display = (category === 'all' || item.dataset.category ===
+                    category) ? 'block' : 'none';
             });
         });
     });
