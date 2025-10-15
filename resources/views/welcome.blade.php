@@ -36,6 +36,9 @@
     <link rel="manifest" href="{{ asset('favicons/site.webmanifest') }}">
     <meta name="msapplication-TileImage" content="{{ asset('favicons/favicon-96x96.png') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
+
+
+    <meta name="google-site-verification" content="leQEJX4FXoNBgBQp4HQ1CsLcML_tw7CUwICRShoWgx4" />
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarContent" data-bs-offset="100">
 @if(session('success') || session('error'))
