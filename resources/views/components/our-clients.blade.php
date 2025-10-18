@@ -7,7 +7,7 @@
 
         <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach($clients->chunk(1) as $index => $clientGroup)
+                @foreach($clients->chunk(4) as $index => $clientGroup)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}" data-bs-interval="3000">
                         <div class="row justify-content-center g-4">
                             @foreach($clientGroup as $client)
@@ -49,10 +49,10 @@
     </div>
 
     <style>
-        #clients .client-logo-card:hover {
+        /* #clients .client-logo-card:hover {
             transform: scale(1.08);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
+        } */
 
         #clients img {
             filter: grayscale(100%);
