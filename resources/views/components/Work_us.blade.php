@@ -14,35 +14,54 @@
         <div class="row g-4" id="portfolio-items">
             @if (isset($projects) && count($projects) > 0)
                 @foreach ($projects as $project)
+                    @php
+                        $isPdf = Str::endsWith($project->link, '.pdf');
+                        $url = $isPdf ? asset($project->link) : $project->link;
+                    @endphp
+
                     <div class="col-lg-4 col-md-6 portfolio-item" data-category="{{ $project->type }}"
                         data-aos="zoom-in">
-                        <div class="card h-100 shadow-sm border-0 rounded-4">
-                            <div class="ratio ratio-16x9 rounded-top-4">
-                                @php
-                                    $isPdf = Str::endsWith($project->link, '.pdf');
-                                    $url = $isPdf ? asset($project->link) : $project->link;
-                                @endphp
+                        <div class="card shadow-sm border-0 rounded-4 h-100">
 
-                                 @if ($isPdf)
-                                    {{-- إذا الملف PDF --}}
-                                    @if ($project->image)
-                                        <img src="{{ asset($project->image) }}" alt="صورة المشروع">
-                                    @else
-                                        <img src="{{ asset('images/pdf-placeholder.png') }}" alt="ملف PDF">
-                                    @endif
+                            {{-- صورة --}}
+                            <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
+                                @if ($isPdf)
+                                    <img src="{{ $project->image ? asset($project->image) : asset('images/pdf-placeholder.png') }}"
+                                        class="w-100 h-100 object-fit-cover" alt="صورة المشروع">
                                 @else
-                                    {{-- إذا كان رابط (موقع/تطبيق) --}}
                                     <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768"
-                                        alt="لقطة الموقع">
+                                        class="w-100 h-100 object-fit-cover" alt="لقطة المشروع">
                                 @endif
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $project->title }}</h5>
-                                <p class="card-text text-muted small">{{ $project->description }}</p>
-                                <a href="{{ $url }}" target="_blank"
-                                    class="btn btn-outline-primary btn-sm rounded-pill">
-                                    {{ $isPdf ? 'عرض الملف' : 'زيارة المشروع' }}
-                                </a>
+
+                            {{-- المحتوى --}}
+                            <div class="card-body d-flex flex-column p-4">
+
+                                <h5 class="card-title fw-bold text-primary">
+                                    {{ $project->title }}
+                                </h5>
+
+                                <p class="card-text text-muted mb-4" style="min-height: 60px; overflow: hidden;">
+                                    {{ Str::limit($project->description, 120) }}
+                                </p>
+
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+
+                                    <a href="{{ $url }}" target="_blank"
+                                        class="btn btn-primary btn-sm px-4 rounded-pill">
+                                        <i class="bi bi-box-arrow-up-right me-1"></i>
+                                        {{ $isPdf ? 'عرض الملف' : 'زيارة المشروع' }}
+                                    </a>
+
+                                    @if (!empty($project->client->link_of_location))
+                                        <a href="{{ $project->client->link_of_location }}" target="_blank"
+                                            class="btn btn-outline-secondary btn-sm px-4 rounded-pill">
+                                            <i class="bi bi-globe2 me-1"></i> موقع العميل
+                                        </a>
+                                    @endif
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -81,6 +100,10 @@
         border-color: #735eb3;
         background-color: #735eb3;
         color: #FFFFFF;
+    }
+
+    .object-fit-cover {
+        object-fit: cover;
     }
 </style>
 

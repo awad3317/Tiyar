@@ -7,9 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = [
-        'title', 'description', 'type', 'link',
-        'order_id', 'service_id', 'developer_id',
-        'start_date', 'delivery_date', 'price', 'price_for_company', 'status', 'image',
+        'title',
+        'description',
+        'type',
+        'link',
+        'order_id',
+        'service_id',
+        'developer_id',
+        'client_id',
+        'start_date',
+        'delivery_date',
+        'price',
+        'price_for_company',
+        'status',
+        'image',
     ];
 
     public function order()
@@ -34,6 +45,8 @@ class Project extends Model
     {
         return $this->belongsToMany(Project::class, 'developer_project');
     }
-
-
+    public function client()
+    {
+        return $this->belongsTo(Clients::class, 'client_id');
+    }
 }

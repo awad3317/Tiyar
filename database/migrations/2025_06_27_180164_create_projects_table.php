@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('link');
             $table->string('image')->nullable();
             $table->foreignId('service_id')->constrained()->onDelete('cascade');
+            $table->foreignId('client_id')->nullable()->onDelete('cascade');
             $table->date('start_date')->nullable();
             $table->date('delivery_date')->nullable();
             $table->decimal('price', 10, 2);

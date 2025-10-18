@@ -18,8 +18,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
+
         $projects = Project::all();
-        return view('welcome', compact('projects'));    }
+        return view('welcome', compact('projects'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -42,12 +44,12 @@ class ProjectController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
             'pdf_file' => 'nullable|file|mimes:pdf|max:20480',
         ]);
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $imageService = new ImageService();
             $data['image'] = $imageService->saveImage($request->file('image'), 'projects');
         }
 
-        
+
         // if ($request->hasFile('image')) {
         //     $path = $request->file('image')->store('projects', 'public');
         //     $data['image'] = 'storage/' . $path;
@@ -65,30 +67,16 @@ class ProjectController extends Controller
 
     public function showPortfolio()
     {
-            $clients = Clients::all();
+        // جلب المشاريع مع العميل المرتبط
+        $projects = Project::with('client')->get();
 
-        $projects = Project::all()->map(function ($project) {
-            $isPdf = Str::endsWith($project->link, '.pdf');
-            
+        // جلب كل العملاء (إذا لزم للأقسام الأخرى)
+        $clients = Clients::all();
 
-            return (object)[
-                'id' => $project->id,
-                'title' => $project->title,
-                'description' => $project->description,
-                'type' => $project->type,
-                'link' => $project->link,
-                'is_pdf' => $isPdf,
-                'image' => $project->image,
-                
-                'url' => $isPdf ? asset($project->link) : $project->link,
-            ];
-        });
-
+        // جلب الخدمات
         $services = Service::all();
+
 
         return view('welcome', compact('projects', 'services', 'clients'));
     }
-
-
-
 }
