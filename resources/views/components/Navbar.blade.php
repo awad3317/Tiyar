@@ -39,6 +39,9 @@
                 <li class="nav-item">
                     <a class="nav-link py-1 px-3 fw-bold fs-5" href="#service">ماذا نقدم</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 px-3 fw-bold fs-5" href="#clients">عملاؤنا</a>
+                </li>
 
             </ul>
 

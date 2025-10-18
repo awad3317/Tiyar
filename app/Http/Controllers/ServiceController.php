@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Clients;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
+
 
 class ServiceController extends Controller
 {
@@ -12,7 +15,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-
+        $clients = Clients::all();
+        return view('welcome', compact('clients'));
     }
 
     /**
@@ -20,7 +24,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('components.our-clients');
     }
 
     /**
@@ -28,7 +32,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $data = $request->validate([
+            'client_name' => 'required|string|max:255',
+            'phone' => 'required|numeric',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'link_of_location' => 'nullable|url',
+            'location' => 'nullable|string|max:255',
+        ]);
+        if($request->hasFile('logo')){
+            $imageService = new ImageService();
+            $data['logo'] = $imageService->saveImage($request->file('logo'), 'clients');
+        }
+        Clients::create($data);
+        return redirect()->back()->with('success','تم إرسال الطلب بنجاح شكرا لاستخدامك خدمتنا!');
     }
 
     /**

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\Clients;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Services\ImageService;
@@ -63,6 +65,8 @@ class ProjectController extends Controller
 
     public function showPortfolio()
     {
+            $clients = Clients::all();
+
         $projects = Project::all()->map(function ($project) {
             $isPdf = Str::endsWith($project->link, '.pdf');
             
@@ -82,7 +86,7 @@ class ProjectController extends Controller
 
         $services = Service::all();
 
-        return view('welcome', compact('projects', 'services'));
+        return view('welcome', compact('projects', 'services', 'clients'));
     }
 
 

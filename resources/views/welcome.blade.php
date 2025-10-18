@@ -77,6 +77,9 @@
     <!-- تضمين الموديل -->
     @include('components.modal', ['services' => $services])
 
+    <!-- تضمين العملاؤنا -->
+@include('components.our-clients', ['clients' => $clients])
+
     <!-- محتوى الصفحة -->
     <div class="container">
         @yield('content')
