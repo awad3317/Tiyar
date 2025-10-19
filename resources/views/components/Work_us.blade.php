@@ -30,16 +30,16 @@
                             <div class="ratio ratio-16x9 rounded-top-4 overflow-hidden">
                                 @if ($project->image)
                                     {{-- إذا كانت هناك صورة محفوظة في قاعدة البيانات --}}
-                                    <img src="{{ asset('storage/' . $project->image) }}"
-                                        class="project-cover" alt="صورة المشروع">
+                                    <img src="{{ asset('storage/' . $project->image) }}" class="project-cover"
+                                        alt="صورة المشروع">
                                 @elseif (!$isPdf && filter_var($url, FILTER_VALIDATE_URL))
                                     {{-- إذا لم يكن PDF ولكنه رابط لموقع --}}
                                     <img src="https://api.screenshotmachine.com?key=fadae1&url={{ urlencode($url) }}&dimension=1024x768"
                                         class="project-cover" alt="لقطة الموقع">
                                 @else
                                     {{-- صورة افتراضية إذا لا PDF ولا صورة --}}
-                                    <img src="{{ asset('images/placeholder-website.png') }}"
-                                        class="project-cover" alt="صورة افتراضية">
+                                    <img src="{{ asset('images/placeholder-website.png') }}" class="project-cover"
+                                        alt="صورة افتراضية">
                                 @endif
                             </div>
 
@@ -59,8 +59,16 @@
                                     <a href="{{ $url }}" target="_blank"
                                         class="btn btn-primary btn-sm px-4 rounded-pill">
                                         <i class="bi bi-box-arrow-up-right me-1"></i>
-                                        {{ $isPdf ? 'عرض الملف' : 'زيارة المشروع' }}
+                                        {{ $isPdf ? 'عرض الملف' : 'زيارة الموقع' }}
                                     </a>
+                                    @if ($project->service->name == 'تطوير وعمل تطبيقات الهواتف الذكية')
+                                            <a href="{{ $url }}" target="_blank"
+                                        class="btn btn-primary btn-sm px-4 rounded-pill">
+                                        <i class="bi bi-box-arrow-up-right me-1"></i>
+                                        حمل التطبيق
+                                    </a>
+                                    @endif
+                                 
 
                                     @if (!empty($project->client->link_of_location))
                                         <a href="{{ $project->client->link_of_location }}" target="_blank"
@@ -93,26 +101,29 @@
         border: none;
         border-radius: 0.75rem 0.75rem 0 0;
     }
-.project-cover {
-    width: 100%;
-    height: 250px; /* يمكنك تعديل الارتفاع حسب ذوقك */
-    overflow: hidden;
-    background: #f8f8f8;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-}
 
-.project-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* تغطية كاملة بدون ضغط */
-    display: block;
-    transition: 0.3s;
-}
+    .project-cover {
+        width: 100%;
+        height: 250px;
+        /* يمكنك تعديل الارتفاع حسب ذوقك */
+        overflow: hidden;
+        background: #f8f8f8;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
 
-.project-cover img:hover {
-    transform: scale(1.03);
-}
+    .project-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* تغطية كاملة بدون ضغط */
+        display: block;
+        transition: 0.3s;
+    }
+
+    .project-cover img:hover {
+        transform: scale(1.03);
+    }
 
     .filter-btn.active {
         background-color: #735eb3;
